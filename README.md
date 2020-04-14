@@ -11,7 +11,7 @@ JavaScript  - functional, dynamics, effects, interactions... <br>
     In prezent sunt actuale versiunile ECMA 6,7,8+ <br>
     Versiunile 6 si 7 sunt suportate complet de toate browserele si de FrontEnd
 </p>
-    Js-ul un da un set de intstructiuni 
+    Js-ul da un set de intstructiuni 
 <hr>
 
 <h2>Basics:</h2>
