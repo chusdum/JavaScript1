@@ -1,0 +1,28 @@
+<script>
+
+    ///////// DATA //////////////
+    let foodName = "Pizza"
+    let foodPrice = 75.00
+    let foodAviable = true
+
+    let drinkName = "Water"
+    let drinkPrice = 5.00
+    let drinkAviable = true
+
+    ////////// Logic & UI //////
+
+    alert( 
+        "########## MENU ########### \n"
+       + foodName  + " - " + foodPrice  + " MDL\n" 
+       + drinkName + " - " + drinkPrice + " MDL" 
+       )
+
+    //////// Calculations & OUTPUT /////
+
+    let foodQ  = prompt( "How many " + foodName + " do you want?" )
+    let drinkQ = prompt("How many " + drinkName + " do you want?")
+
+    let totalCost = foodQ * foodPrice + drinkQ * drinkPrice
+    alert ("Total to pay: " + totalCost + " MDL" )
+
+</script>
