@@ -11,6 +11,7 @@
     let user_Pin = "1234"
     // pinul introdus de utilizator
     let pin = ""
+    // nr iteratiilor (am pus i=2 pentru ca si asa se executa odata , prima oara
     let i = 2
     
         // asteapta sa introduci de la tastatura pinul prin forma prompt
@@ -20,21 +21,21 @@
             }else{
                 // Cit timp pinul introdus este diferit de user_Pin , repeta ciclul:
                 while (pin != user_Pin){
-                    if (i == 0) {
+                    if (i == 0) { // daca i==0 , afiseaza mesajul si intrerupe ciclul
                         alert("Pin introdus gresit de 3 ori! Incearca mai tirziu!")
                         break
                     }
-                    // La greseala, afiseaza mesajul:
+                    // La greseala, afiseaza mesajul si nr de iteratii ramase:
                     alert (`WRONG PIN CODE! TRY AGAIN!\nAi inca ${i} incercari`)
                     // Repeta sa intrebe in intreriorul ciclului user_Pin , cit timp (pin != user_Pin)
                     pin = +prompt("Enter Your Pin-code: ")
 
-
+                    // Daca pinul este corect 
                     if (pin == user_Pin)
                     {
                         alert ("CORRECT PIN!!! WELCOME!!!")
                     }
-                    
+                    // decrement la fiecare incercare cind pinul este gresit
                     i--
                 }
             }
