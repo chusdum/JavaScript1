@@ -1,0 +1,125 @@
+<script>
+    /*
+        exemplu cu restaurantu , de adaugat while si if-uri --> interactivitate
+    */
+
+    let foodName1 = "Pizza"
+    let foodPrice1 = 75.00
+    let foodAviable1 = true
+
+    let foodName2 = "Burger"
+    let foodPrice2 = 45.00
+    let foodAviable2 = true
+
+    let drinkName1 = "Water"
+    let drinkPrice1 = 5.00
+    let drinkAviable1 = true
+
+    let drinkName2 = "Cola"
+    let drinkPrice2 = 15.00
+    let drinkAviable2 = true
+
+    // afisez meniul ; Logic & UI
+let sumTotal=0
+while (true)
+{
+    alert(
+        "######## MENU #######\n"
+        + "1." + foodName1 + " - " + foodPrice1 + " MDL (aviable: " + foodAviable1 + ")\n"
+        + "2." + foodName2 + " - " + foodPrice2 + " MDL (aviable: " + foodAviable2 + ")\n"
+        + "3." + drinkName1 + " - " + drinkPrice1 + " MDL (aviable: " + drinkAviable1 + ")\n"
+        + "4." + drinkName2 + " - " + drinkPrice2 + " MDL (aviable: " + drinkAviable2 + ")"
+    )
+
+    // Dam utilizatorului sa aleaga ce vrea sa cumpere
+    // Alege pizza
+    let wantFood1 = confirm("Do you want " + foodName1 + " ?")
+    let foodQ1
+    // Daca vrea pizza
+    if (wantFood1) {
+        // cite pizza
+        foodQ1 = +prompt("How many " + foodName1 + " do you want?")
+        // Daca nu pizza
+    } else {
+        foodQ1 = 0
+    }
+    // Alege burgher
+    let wantFood2 = confirm("Do you want " + foodName2 + " ?")
+    let foodQ2
+    // Daca burgher
+    if (wantFood2) {
+        foodQ2 = +prompt("How many " + foodName2 + " do you want?")
+        // Daca nu burgher
+    } else {
+        foodQ2 = 0
+    }
+    // Alege bauturi
+    //Daca water
+    let wantDrink1 = confirm("Do you want " + drinkName1 + " ?")
+    let drinkQ1
+    if (wantDrink1) {
+        drinkQ1 = +prompt("How many " + drinkName1 + " do you want?")
+    } else {
+        drinkQ1 = 0
+    }
+    // Daca cola
+    let wantDrink2 = confirm("Do you want " + drinkName2 + " ?")
+    let drinkQ2
+    if (wantDrink2) {
+        drinkQ2 = +prompt("How many " + drinkName2 + " do you want?")
+    } else {
+        drinkQ2 = 0
+    }
+    // calculele
+    let totalCost = foodQ1 * foodPrice1 + foodQ2 * foodPrice2 + drinkQ1 * drinkPrice1 + drinkQ2 * drinkPrice2
+    // Facem suma tuturor totalurilor 
+    sumTotal+=totalCost
+
+    // alert("Total to pay: " + sumTotal + " MDL")
+
+    if (sumTotal == 0) { // Daca suma este 0
+        // Daca nu a comandat nimic , intreaba sa mai vada meniul. Daca nu - iese din ciclu
+        let zero=confirm ("Nu ai comandat nimic , vrei sa faci comanda acum?")
+        if (zero){continue}else {break}
+    } else { // Daca suma nu-i 0
+        let wantDelivery = confirm("Spre achitare: " + sumTotal + "\nDoriti si livrare in valoare de 50 MDL?\nDaca ati comandat mai mult de 300 MDL, livrare gratuita!!")
+        if (wantDelivery){
+            //Daca da, dar suma > 300
+            if (sumTotal > 300) {
+                alert("Multumim pentru comanda!!!\nBeneficiati de livrare gratuita!")
+            }else if (sumTotal <300){ // Daca da, dar suma < 300
+                let total = sumTotal + 50 // se sumeaza plata pentru livrare
+                alert("Livrare: 50 MDL\nTotal to pay: " + sumTotal + " + 50 MDL = " + total + " MDL")
+                sumTotal=total // salvam plata pe livrare + suma initiala in variabila sumTotal
+            }
+        //Daca nu vrea livrare    
+        }else {
+            if (sumTotal > 300) { //Daca nu ,dar suma-i >300
+                alert("Multumim pentru comanda!!!\nVa asteptam sa ridicati comanda!")
+            } else if (sumTotal < 300) { //Daca nu, dar suma-i <300
+                let confirmPay = confirm("Spre achitare: " + sumTotal + "\nNu ati acumulat suma mai mare de 300 ,\ndar puteti profita de livrare gratuita daca o faceti\nVreti sa mai comandati ceva?")
+                if (confirmPay) {// Daca vrea livrare gratuita , face inca o comanda
+                    continue
+                }else { //Nu mai vrea nimic, iesi din ciclu
+                    alert("Multumim pentru comanda si o zi frumoasa!!!")
+                    break
+                }
+            } else {//Restu cazurilor , nu vre livrare
+                alert("Multumim pentru comanda!!!")
+            } 
+            
+        }
+    }
+
+    let wantMore=confirm ("Vrei sa mai comanzi ceva?")
+    if (wantMore){
+        continue
+    }else {
+        alert ("Multumim pentru cumparaturi! O zi frumoasa!")
+        break
+    }
+
+}
+
+
+</script>

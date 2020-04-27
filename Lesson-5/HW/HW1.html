@@ -1,0 +1,90 @@
+<script>
+/*
+    HW1:
+    cu ajutorul lui switch/case
+    se introduce nr. zilei saptaminii < prompt() (1...7)
+    primim in alert() -> care sa contina denumirea zilei saptaminii
+    + pentru zilele 6,7 -> sa mai apara cuvintul "weekend"
+    + inca o intrebare < prompt() - "alege calendarul"
+*/
+
+let calendar= +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica")
+let zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7")
+while (true)
+{
+    if (calendar==2){
+        switch (zile) {
+            case 1: alert("Duminica Weekend!"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 2: alert("Luni"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+            case 3: alert("Marti"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+            case 4: alert("Miercuri"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+            case 5: alert("Joi"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 6: alert("Vineri"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+            case 7: alert("Sinmbata Weekend!"); 
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+
+            default: alert("nu cunosc asa zile!!!");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7");
+                    break;
+        }
+    }else if (calendar==1){
+        switch(zile)
+        {
+            case 1: alert("Luni");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 2: alert("Marti");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 3: alert("Miercuri");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 4: alert("Joi");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 5: alert("Vineri");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 6: alert("Sinmbata Weekend!");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+            case 7: alert("Duminica Weekend!");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+
+            default: alert("nu cunosc asa zile!!!");
+                    calendar = +prompt("prima zi a saptaminii:\n1.Luni\n2.Duminica");
+                    zile = +prompt("introdu numarul de ordine a zilei saptaminii\nDe le 1 la 7"); 
+                    break;
+        }
+    }
+}
+</script>

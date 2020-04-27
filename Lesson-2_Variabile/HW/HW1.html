@@ -1,0 +1,42 @@
+<script>
+    /*
+        exemplu cu restaurantu , de adaugat while si if-uri --> interactivitate
+    */
+
+    let foodName1 = "Pizza"
+    let foodPrice1 = 75.00
+    let foodAviable1 = true
+
+    let foodName2 = "Burger"
+    let foodPrice2 = 45.00
+    let foodAviable2 = true
+
+    let drinkName1 = "Water"
+    let drinkPrice1 = 5.00
+    let drinkAviable1 = true
+
+    let drinkName2 = "Cola"
+    let drinkPrice2 = 15.00
+    let drinkAviable2 = true
+
+    // afisez meniul ; Logic & UI
+
+    alert(
+        "########### MENU ##########\n"
+        + "1." + foodName1 + " - " + foodPrice1 + " MDL\n"
+        + "2." + foodName2 + " - " + foodPrice2 + " MDL\n"
+        + "3." + drinkName1 + " - " + drinkPrice1 + " MDL\n"
+        + "4." + drinkName2 + " - " + drinkPrice2 + " MDL"
+    )
+
+    // calculele
+    let foodQ1 = prompt("How many " + foodName1 + " do you want?")
+    let drinkQ1 = prompt("How many " + drinkName1 + " do you want?")
+    let foodQ2 = prompt("How many " + foodName2 + " do you want?")
+    let drinkQ2 = prompt("How many " + drinkName2 + " do you want?")
+
+    let totalCost = foodQ1 * foodPrice1 + foodQ2 * foodPrice2 + drinkQ1 * drinkPrice1 + drinkQ2 * drinkPrice2
+
+    alert("Total to pay: " + totalCost + " MDL")
+
+</script>

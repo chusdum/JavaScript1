@@ -1,0 +1,43 @@
+<script>
+    /*  
+        Sa intrebe pinul de la utilizator .
+        a) max 3 incercari
+        b) mesaj gen "WELCOME!" daca-i corect
+
+
+        
+    */
+    // Pinul utilizatorului
+    let user_Pin = "1234"
+    // pinul introdus de utilizator
+    let pin = ""
+    let i = 2
+    
+        // asteapta sa introduci de la tastatura pinul prin forma prompt
+        pin = prompt ("Enter Your Pin-code: \nAi doar 3 incercari!")
+        if (pin == user_Pin) {
+                alert("CORRECT PIN!!! WELCOME!!!")
+            }else{
+                // Cit timp pinul introdus este diferit de user_Pin , repeta ciclul:
+                while (pin != user_Pin){
+                    if (i == 0) {
+                        alert("Pin introdus gresit de 3 ori! Incearca mai tirziu!")
+                        break
+                    }
+                    // La greseala, afiseaza mesajul:
+                    alert (`WRONG PIN CODE! TRY AGAIN!\nAi inca ${i} incercari`)
+                    // Repeta sa intrebe in intreriorul ciclului user_Pin , cit timp (pin != user_Pin)
+                    pin = +prompt("Enter Your Pin-code: ")
+
+
+                    if (pin == user_Pin)
+                    {
+                        alert ("CORRECT PIN!!! WELCOME!!!")
+                    }
+                    
+                    i--
+                }
+            }
+    
+
+</script>

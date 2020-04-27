@@ -1,0 +1,91 @@
+<script>
+    /*
+        Daca costul comenzii depaseste 300 de lei -> "livrare gratuita"
+        in caz contrar sa se adauge +50 de lei la costul total (incluzind livrarea) + interactivitate
+    */
+
+    let foodName1 = "Pizza"
+    let foodPrice1 = 75.00
+    let foodAviable1 = true
+
+    let foodName2 = "Burger"
+    let foodPrice2 = 45.00
+    let foodAviable2 = true
+
+    let drinkName1 = "Water"
+    let drinkPrice1 = 5.00
+    let drinkAviable1 = true
+
+    let drinkName2 = "Cola"
+    let drinkPrice2 = 15.00
+    let drinkAviable2 = true
+
+    // afisez meniul ; Logic & UI
+
+    alert(
+        "######## MENU #######\n"
+        + "1." + foodName1  + " - " + foodPrice1  + " MDL (aviable: " + foodAviable1  + ")\n"
+        + "2." + foodName2  + " - " + foodPrice2  + " MDL (aviable: " + foodAviable2  + ")\n"
+        + "3." + drinkName1 + " - " + drinkPrice1 + " MDL (aviable: " + drinkAviable1 + ")\n"
+        + "4." + drinkName2 + " - " + drinkPrice2 + " MDL (aviable: " + drinkAviable2 + ")"
+    )
+    
+// Dam utilizatorului sa aleaga ce vrea sa cumpere
+    // Alege pizza
+    let wantFood1 =confirm("Do you want "+ foodName1 + " ?")
+    let foodQ1
+    // Daca vrea pizza
+        if (wantFood1){
+            // cite pizza
+                foodQ1 = +prompt("How many " + foodName1 + " do you want?")
+            // Daca nu pizza
+            }else{
+                foodQ1=0
+            }
+    // Alege burgher
+    let wantFood2= confirm("Do you want "+ foodName2 + " ?")
+    let foodQ2
+        // Daca burgher
+        if (wantFood2){
+            foodQ2 = +prompt("How many " + foodName2 + " do you want?")
+        // Daca nu burgher
+        }else {
+            foodQ2 = 0 
+        }
+// Alege bauturi
+    //Daca water
+    let wantDrink1=confirm("Do you want " + drinkName1 + " ?")
+    let drinkQ1
+        if (wantDrink1) {
+            drinkQ1 =  +prompt("How many " + drinkName1 + " do you want?")
+        }else {
+            drinkQ1 = 0
+        }
+    // Daca cola
+    let wantDrink2=confirm ("Do you want " + drinkName2 + " ?")
+    let drinkQ2
+        if (wantDrink2){
+            drinkQ2 = +prompt("How many " + drinkName2 + " do you want?")
+        }else {
+            drinkQ2 = 0
+        }
+    // calculele
+
+    let totalCost = foodQ1*foodPrice1 + foodQ2*foodPrice2 + drinkQ1*drinkPrice1 + drinkQ2*drinkPrice2
+        // alert("Total to pay: " + totalCost + " MDL")
+    if (totalCost==0){
+        alert ("Reveniti cind va mai ginditi! ))")
+    }else {
+        let wantDelivery = confirm("Spre achitare: "+ totalCost +"\nDoriti si livrare in valoare de 50 MDL?\nDaca ati comandat mai mult de 300 MDL, livrare gratuita!!")
+        if (wantDelivery){
+            if (wantDelivery && totalCost > 300){
+                alert("Beneficiati de livrare gratuita, asteptati curierul!!!")
+            }else {
+                let total = totalCost + 50
+                alert("Livrare: 50 MDL\nTotal to pay: " + totalCost + " + 50 MDL = " + total + " MDL")
+            }
+        }else { 
+            alert("Total to pay: " + totalCost + " MDL")
+        }
+    }
+</script>

@@ -4,7 +4,7 @@ HTML        - structura <br>
 CSS         - styling   <br>
 JavaScript  - functional, dynamics, effects, interactions... <br>
 
-! <b> <u> <i> JS ca standard NU EXISTA si NU ARE VERSIUNE </i> </u></b> !
+! <b> ! <u> <i> JS ca standard NU EXISTA si NU ARE VERSIUNE </i> </u> ! </b> !
 
 <p>
     El este un limbaj de programare care-si axeaza regulile si utilitatile pe <b><u> ECMA SCRIPT </u></b> <br>

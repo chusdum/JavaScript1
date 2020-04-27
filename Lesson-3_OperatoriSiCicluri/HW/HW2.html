@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_3</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            HW2: Validation -> doar in diapazonul [1..10]
+            !!!! De facut cunostinta cu operatorii conditional (<, > ....)
+        */
+
+        let mark = +prompt("What's your mark?")
+
+        if (mark > 10 || mark < 1) {
+            alert("Not a valid mark!")
+        } else if (mark >= 9) {
+            alert("Excellent!")
+        } else if (mark >= 7) {
+            alert("Good!")
+        } else if (mark >= 5) {
+            alert("Sufficient!")
+        } else {
+            alert("Bad!")
+        }
+    </script>
+
+</body>
+</html>
