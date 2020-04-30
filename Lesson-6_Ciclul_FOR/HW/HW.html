@@ -16,7 +16,7 @@
     //display the map
     while(1){
         let map=''
-        for (let y=1;y<10;y++){
+        for (let y=1;y<=10;y++){
             for (let x=1;x<=10;x++){
                     // verificam daca corabia este pe mina (versiunea asta mai tare-mi place)
                     if (mineX == shipX && shipX== x && mineY == shipY && shipY ==y){ 
@@ -30,19 +30,6 @@
                         }
             }
             map+='\n'
-        }
-        // alta modalitate ca sa nu iasa din granitele mapei nu am gasit ((
-        if ((shipX <= 0 || shipY<= 0) || (shipX >= 10 || shipY >= 10)) {
-            let repeat = confirm('End of game!\nRepeat?')
-            if (repeat) {
-                shipX = 5
-                shipY = 5
-                mineY = 3
-                mineX = 3
-                continue
-            } else {
-                break
-            }
         }
         // cind corabia a nimerit pe mina
         if ( (mineX == shipX) && (mineY == shipY) ){
@@ -71,6 +58,12 @@
         case '8':shipY--;break;
         case '9':shipX++;shipY--;break; // deplasarea in scarita, dreapta-sus (mai comod)
         }
+
+        // Verificam ca sa nu iasa corabia din granitile mapei
+        if (shipX <= 0) {shipX = 1}
+        if (shipX >= 10) {shipX = 10}
+        if (shipY <= 0) {shipY = 1}
+        if (shipY >= 10) {shipY = 10}
         /* 
         deoarece "dir" primeste numai valori de tip string , 
         verificam daca este inscris in el ceva sau nu (adica "null")
