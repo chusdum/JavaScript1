@@ -1,11 +1,21 @@
 <script>
 
-    // declarare
+    // declarare a function
     function sayHi( lang ){
-        alert ('Hello!')
+        if (lang=='en'|| lang==undefined){
+            alert('Hello!')
+        } else if (lang=='ro'){
+            alert('Salut!')
+        }else if (lang=='ru'){
+            alert('Привет!')
+        }
+
     }
 
     // call a function
     sayHi()
+    sayHi('en')
+    sayHi('ro')
+    sayHi('ru')
 
 </script>
