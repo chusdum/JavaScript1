@@ -1,0 +1,120 @@
+<html>
+    <!-- HW1 De facut ca iepurele sa nu iasa din mapa -->
+    <!-- HW2 Cind se misca iepurele si ajunge pe morcov , sa apara mesaj de genul "you win!" -->
+    <!-- HW3 De facut varianta bidimensionala coordonatele X,Y ; +2 Butoane (up,down);+2 functii (up/down) ; +1 for Y +br -->
+    <head>
+
+        <style>
+            body{
+                background-color: #444;
+            }
+        </style>
+    
+    </head>
+    <body>
+
+        <div id="garden">
+            
+        </div>
+
+        <button onclick="moveLeft(),eatCarrot()">LEFT</button>
+        <button onclick="moveRight(),eatCarrot()">RIGHT</button>
+        <button onclick="moveUp(),eatCarrot()">UP</button>
+        <button onclick="moveDown(),eatCarrot()">DOWN</button>
+        
+        <script>
+            // inscriem in constante imaginile care trebie folosite
+            const CARROT_IMG = "http://icons.iconarchive.com/icons/google/noto-emoji-food-drink/48/32361-carrot-icon.png"
+            const RABBIT_IMG = "http://icons.iconarchive.com/icons/martin-berube/animal/48/rabbit-icon.png"
+            const  GRASS_IMG = "http://icons.iconarchive.com/icons/icons8/windows-8/48/Plants-Grass-icon.png"
+        
+        // declaram coordonatele pentru iepure si morcov pe axa x si y
+            let carrotCoordX = 3
+            let rabbitCoordX = 5
+            let carrotCoordY = 3
+            let rabbitCoordY = 5
+
+            // creem o functie care se ocupa de rendarea (desenarea) mapei cu toate elementele
+            function renderMap() {
+               
+                let html = ""  // declaram o variabila cu text gol unde se va pastra toata mapa
+                let url  // variabila care va pastra adresa imaginii in dependenta de situatia din if-uri
+                for (let y=1; y<=10; y++){
+                    for (let x=1; x<=10; x++){
+                        if (x == rabbitCoordX && y == rabbitCoordY){
+                            url = RABBIT_IMG
+                        }else if (x == carrotCoordX && y == carrotCoordY) {
+                            url = CARROT_IMG
+                        }else {
+                            url = GRASS_IMG
+                        }
+                        html += `<img src="${url}">` // inscrim si concatinam in variabila html adresa primita din if-urile de mai sus 
+                    }
+                    html +="<br>" // dupa 10 iteratii pe axa x , treci din rind nou
+                }
+                // creem o variabila "div" , unde pastram id-ul preluat din documentul HTML
+                let div = document.getElementById("garden")
+                // in interiorul variabilei "div" , atribuim datele din variabila "html" completata de functia renderMap()
+                div.innerHTML = html
+            }
+
+            /* functiile "moveRight(),moveLeft(),moveUp(),moveDown()" fac posimila miscarea 
+            iepurelui pe mapa + nu permite iepurelui sa iasa de pe teritoriul mapei */
+            function moveRight() {
+                if (rabbitCoordX <10)
+                {
+                    rabbitCoordX++
+                    renderMap()
+                }else {
+                    rabbitCoord = 10
+                } 
+            }
+
+            function moveLeft() {
+                if (rabbitCoordX > 1)
+                {
+                    rabbitCoordX--
+                    renderMap()
+                }else {
+                    rabbitCoord = 1
+                }                
+            }
+
+            function moveUp() {
+                if (rabbitCoordY > 1)
+                {
+                    rabbitCoordY--
+                    renderMap()
+                }else {
+                    rabbitCoord = 1
+                }                
+            }
+
+            function moveDown() {
+                if (rabbitCoordY < 10)
+                {
+                    rabbitCoordY++
+                    renderMap()
+                }else {
+                    rabbitCoord = 10
+                }                
+            }
+            // functia verifica daca coordonatele iepurelui nu intersecteaza coordonatele morcovului
+            function eatCarrot(){
+                if ( (rabbitCoordX == carrotCoordX) && (rabbitCoordY == carrotCoordY) ){
+                    // renderMap()
+                    alert("You win!")
+                }
+            }
+
+            // se apeleaza functia renderMap()
+            renderMap()
+
+
+        </script>
+
+        
+
+    </body>
+
+</html>
